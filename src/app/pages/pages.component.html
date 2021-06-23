@@ -1,0 +1,69 @@
+
+<!-- (20) 2.09 ,min   Pegamos todo el contenido de la app.component.html en ests pagina-->
+
+
+
+<!-- ============================================================== -->
+<!-- Main wrapper (18) - style you can find in pages.scss  pages-blank  -->
+<!-- ============================================================== -->
+<div id="main-wrapper">
+
+  <app-header></app-header>
+  <app-sidebar></app-sidebar>
+
+
+</div>
+
+<!-- ============================================================== -->
+<!-- END Main wrapper (18)  -->
+<!-- ============================================================== -->
+
+<!-- ============================================================== -->
+<!-- Page wrapper (18)  -->
+<!-- ============================================================== -->
+    <div class="page-wrapper">
+
+
+  <!-- ============================================================== -->
+  <!-- Container fluid  -->
+  <!-- ============================================================== -->
+        <div class="container-fluid">
+          <!--Colocamos el app breadcrumbs que son trocitos de pan
+          aqui para tirar hacia atras si necesitamos-->
+          <app-breadcrumbs></app-breadcrumbs>
+
+          <!-- ============================================================== -->
+          <!-- Start Page Content (18) 10.16 min -->
+          <!-- ============================================================== -->
+
+          <!--*Aqui en donde luego cuando tengamos las rutas pondremos el rotuer outlet (18)-->
+          <!--* (19) Ya tengo el archivo de rutas puesto 7.17. min-->
+            <router-outlet></router-outlet>
+
+
+           <!--  <div class="row">
+              <div class="col-12">
+                  <div class="card">
+                      <div class="card-body">
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur quod libero dicta animi, perspiciatis, commodi eos illo labore distinctio voluptatum laboriosam quos possimus dolorem? Veniam omnis animi fugit doloremque praesentium..
+                      </div>
+                  </div>
+              </div>
+          </div> -->
+          <!-- ============================================================== -->
+          <!-- End PAge Content -->
+          <!-- ============================================================== -->
+        </div>
+
+  <!-- END Container fluid  -->
+
+
+    </div>
+<!-- ============================================================== -->
+<!-- END Page wrapper (18)  -->
+<!-- ============================================================== -->
+
+<app-modalimagen></app-modalimagen>
+
+
+

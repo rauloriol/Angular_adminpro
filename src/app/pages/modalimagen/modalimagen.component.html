@@ -1,0 +1,59 @@
+
+<!--(207) Para los modales-->
+<!*--(207) 6.15min Nos creamos un div [fondo-modal-imagen] con una clase para que este sea el que maneje cuando aparece el modal
+          o ventana emergente que esta por encima de todas las demas, la definimos en los styles.css-->
+
+<div class="animated fadeIn fast
+            fondo-modal-imagen
+            oculto"
+            [class.oculto]="modalService.estadoModal">
+
+   <div id="responsive-modal" class="modal fade show"
+                    tabindex="-1"
+                    role="dialog"
+                    aria-labelledby="myModalLabel"
+                    style="display: block;">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <!--HEADER-->
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">Subir imagen</h4>
+                                                <button type="button"
+                                                        class="close"
+                                                        data-dismiss="modal"
+                                                        aria-hidden="true"
+                                                        (click)="cerrarModal()">×</button>
+                                            </div>
+
+                                            <!--BODY-->
+                                            <div class="modal-body">
+
+                                              <h3>Selecciona una imagen</h3>
+
+                                              <div class="text-center">
+
+                                                 <img *ngIf="!imgTemp" [src]="modalService.img" class="img_avatar">
+
+                                                 <img *ngIf="imgTemp"  [src]="imgTemp" class="img_avatar">
+                                              </div>
+
+                                                <input type="file"
+                                                (change)="cambiarImagen($event.target.files[0])">
+
+                                            </div>
+
+                                            <!--FOOTER-->
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal" (click)="cerrarModal()">Cancelar</button>
+                                                <button type="button" class="btn btn-danger waves-effect waves-light" (click)="subirImagen()">Subir imagen</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+  </div>
+
+
+
+

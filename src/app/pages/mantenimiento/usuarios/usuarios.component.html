@@ -1,0 +1,109 @@
+
+<!--(197) Creacion de la vista de Usuarios mantenimiento-->
+
+  <div class="row animated fadeIn fast">
+
+              <div class="col-12">
+                  <div class="card">
+                      <div class="card-body">
+
+                            <input type="text"
+                            class="form-control"
+                            placeholder="Buscar Usuario"
+                            #txtBusqueda
+                            (keyup)="buscarUsuarios(txtBusqueda.value)"
+
+                            />
+
+                      </div>
+                  </div>
+              </div>
+    </div>
+
+
+<div class="row"
+     *ngIf="cargando">
+  <div class="col-12">
+      <div class="alert alert-info text-center">
+        <h4 class="alert-heading">Cargando..</h4>
+        <i class=" fa fa-2x fa-spin fa-refresh"></i>
+        <p class="mb-0"></p>
+      </div>
+
+  </div>
+</div>
+
+<!-- (197) 6.35min Tablas vamos a basic table de ahi a bordered table lo elegimos con el inspector al lado y copiamos y pegamos aqui-->
+
+
+<div class="row  animated fadeIn fast"
+    *ngIf="!cargando"  >
+  <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Total de Usuarios({{totalUsers}})</h4>
+                                <h6 class="card-subtitle">Usuarios registrados en la Aplicacion</h6>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th class="ancho100">Avatar</th>
+                                                <th>Correo</th>
+                                                <th>Nombre</th>
+                                                <!-- N lo lee bien en la tabla
+                                                <th class="ancho100">Rol</th>
+                                                -->
+                                                <th class="ancho100">Auth</th>
+                                                <th class="text-nowrap ancho100">Acciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let usuario of users">
+                                                <td class="tex-center">
+                                                  <img [src]="usuario.imagenUrl"
+                                                        alt="Avatar de usuario"
+                                                        class="ancho50 cursor"
+                                                        (click)="abrirModal(usuario)">
+                                                </td>
+                                                <td>{{usuario.email}}</td>
+                                                <td>{{usuario.nombre}}</td>
+                                                <!--
+                                                <td>{{usuario.rol}}</td>
+                                                -->
+                                                <td>
+                                                  <span *ngIf="usuario.google" class="label label-danger">Google</span>
+                                                  <span *ngIf="!usuario.google" class="label label-info">Email</span>
+                                                </td>
+
+                                                <td class="text-nowrap text-center">
+                                                   <!--
+                                                    <a href="#" data-toggle="tooltip" data-original-title="Editar"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>
+                                                   -->
+                                                    <a
+                                                    (click)="eliminarUsuario(usuario)"
+                                                    class="cursor"
+                                                    data-toggle="tooltip"
+                                                    data-original-title="Borrar">
+                                                    <i class="fa fa-close text-danger"></i> </a>
+                                                </td>
+
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                              <div *ngIf="txtBusqueda.value.length===0">
+                                  <button type="button" (click)="cambiarPagina(-5)" class="btn btn-secondary">Anterior</button>
+                                  &nbsp;
+                                  <button type="button"  (click)="cambiarPagina(5)" class="btn btn-secondary">Siguiente</button>
+                              </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+</div>
+
+

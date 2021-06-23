@@ -1,0 +1,47 @@
+/* (62) 7.30min Con esto nos sale un cursor cuando pasamos por ecima de un cuadrito */
+
+#themecolors .selector , .cursor{
+  cursor: pointer;
+
+}
+
+#google_btn{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.cursor{
+  cursor: pointer;
+}
+
+.img_avatar{
+  width: 151px;
+  height: 151px;
+
+}
+.ancho100{
+  width: 100px;
+
+}
+.ancho50{
+  width: 50px;
+}
+.ancho140{
+  width: 140px;
+}
+
+
+.fondo-modal-imagen{
+    /* background-color: rgba(0, 0, 0, 0.4); */
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100px;
+    width: 100px;
+    z-index: 9999;
+}
+.oculto{
+  display: none;
+}

@@ -1,0 +1,51 @@
+
+    <div class="row">
+
+       <div class="col-6">
+
+        <!--(56) la etiquta de tiulo la recibe del imput() de donut.component.ts-->
+        <!--(56) En el caso de no poner nada por defecto el imput tiene una descripcion que se llama sin titulo-->
+
+        <app-donut
+                  titulo="Ventas"
+                  [labels]="labels1"
+                  [data]="data1">
+        </app-donut>
+
+       </div>
+
+       <div class="col-6">
+
+        <app-donut
+                  titulo="Compras"
+                  [labels]="labels1"
+                  [data]="data2">
+        </app-donut>
+
+      </div>
+
+
+    </div>
+
+    <!--*(56) Por defecto si las graficas no tienen datos reciben de titulo = sin titulo, de etiquetas = etiquta1 2 y 3
+     y de datos 1 ,1 ,1 -->
+     <!--*Se pueden definir los datos en graficas.component.ts-->
+    <div class="row">
+
+      <div class="col-6">
+
+         <app-donut
+                  titulo="Pagado">
+        </app-donut>
+
+      </div>
+
+      <div class="col-6">
+
+       <app-donut
+                  titulo="Pendiente">
+        </app-donut>
+     </div>
+
+
+   </div>
